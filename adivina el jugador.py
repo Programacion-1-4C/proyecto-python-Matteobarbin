@@ -1,5 +1,3 @@
-import random
-import sys
 from funcionmenu import adivina_el_jugadort
 
 jugadorest = "perez,diaz,villagra,valoyes,herrera,aguerre,benavidez,catalan,martino,malatini,franco,garro,esquivel,godoy,ortegoza,bufarini,suarez,girotti,santos,romero,fertoli"
