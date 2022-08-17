@@ -1,28 +1,22 @@
 import random
 import sys
+from funcionmenu import adivina_el_jugadort
 
-jugadorest = "perez,diaz,vilagra,valoyes,herrera,aguerre,benavidez,catalan,martino,malatini,franco,garro,esquivel,godoy,ortegoza,bufarini,suarez,girotti,santos,romero,fertoli"
+jugadorest = "perez,diaz,villagra,valoyes,herrera,aguerre,benavidez,catalan,martino,malatini,franco,garro,esquivel,godoy,ortegoza,bufarini,suarez,girotti,santos,romero,fertoli"
 jugadorest = jugadorest.split(",")
 final_jugadorest = []
 for x in jugadorest:
     jugadorest = x.strip()
     final_jugadorest.append(jugadorest)
-
 puntos = 0
+while True:
+    print("1.ingrese un nuevo jugador")
+    print("2.vamo a jugar")
+    operacion = int(input(""))
+    if operacion == 1:
+        nuevo_jugadorest = str(input("ingrese un nuevo jugador"))
+        final_jugadorest.append(nuevo_jugadorest)
 
-def adivinaeljugadort():
-    global puntos
-    print("juego de futbol -adivina el nombre del jugador")
-    print("lista de jugadorest ...tenes que adivinar el nombre de un jugadort ramdom")
-    print(final_jugadorest)
-    random_final_jugadorest = random.choice(final_jugadorest)
-    print(random_final_jugadorest[0] + "-"*(len(random_final_jugadorest)-2) + random_final_jugadorest[-1])
+    if operacion == 2:
+        adivina_el_jugadort(puntos, final_jugadorest)
 
-    user_input = str(input("adivina el nombre del jugadort : "))
-    if user_input == random_final_jugadorest :
-        puntos +=1
-        print("puntos:", puntos)
-        adivinaeljugadort()
-    else:
-        print("")
-        print("")
